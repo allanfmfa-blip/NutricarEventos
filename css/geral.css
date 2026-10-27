@@ -1,0 +1,57 @@
+     @import url(eventos.css);
+     @import url(header.css);
+     @import url(painel.css);
+
+
+     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+     @font-face {
+         font-family: 'Kensington';
+         src: url(../fontes/KensingtonTest-CompressedRegular-BF65d815b73b9b6.otf) format('opentype');
+         font-weight: normal;
+         font-style: normal;
+         font-display: swap;
+     }
+
+     :root {
+         /* Paleta Oficial Nutricar Brasil */
+         --bg-dark: #0f1c16;
+         --card-bg: #0f2018; 
+         --card-border: #244636;
+         --nutricar-green: #3d894c;
+         --nutricar-light: #fdfae9;
+         --nutricar-accent: #22c55e;
+         --accent-retrofit: #fdfae9;
+         --accent-outro: #f07341;
+         --accent-inauguracao: #3d894c;
+         --text-muted: #a3b899;
+         --font-titulo: 'Kensington';
+         --font-texto: "DM Sans";
+     }
+
+     * {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+
+     }
+
+     ::-webkit-scrollbar {
+         display: none;
+     }
+
+     html {
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+         scroll-behavior: auto;
+     }
+
+     body {
+         background-color: var(--bg-dark);
+         color: var(--nutricar-light);
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+         overflow-x: hidden;
+         padding-bottom: 120px;
+     }

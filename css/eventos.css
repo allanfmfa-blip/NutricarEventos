@@ -1,0 +1,219 @@
+@import url(geral.css);
+@import url(header.css);
+@import url(painel.css);
+
+/* LAYOUT FORÇADO PARA MODO DESKTOP NO CELULAR (BASE MAIOR) */
+.dashboard-layout {
+    width: 1600px !important;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    align-items: flex-start;
+    font-family: var(--font-texto);
+}
+
+/* COLUNA ESQUERDA - CARD DO PRÓXIMO EVENTO FIXO */
+.sidebar-next-event {
+    width: 480px;
+    flex-shrink: 0;
+    position: sticky;
+    
+    /* A MÁGICA AQUI: 50vh (meio da tela) + 43px (metade do cabeçalho) para centralizar no espaço que sobra */
+    top: calc(50vh + 65px);
+    transform: translateY(-50%);
+    
+    background-color: var(--card-bg);
+    border: 2px solid var(--nutricar-accent);
+    border-radius: 24px;
+    padding: 35px 30px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+}
+
+.next-label {
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--nutricar-accent);
+    letter-spacing: 1px;
+    background: rgba(34, 197, 94, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.sidebar-next-event h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--nutricar-light);
+    margin-bottom: 12px;
+    font-family: var(--font-texto);
+    line-height: 1.1;
+}
+
+.sidebar-next-event p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    line-height: 1.4;
+}
+
+/* CONTADOR REGRESSIVO */
+.countdown-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.countdown-box {
+    background: rgba(247, 247, 240, 0.05);
+    border: 1px solid rgba(247, 247, 240, 0.12);
+    border-radius: 14px;
+    padding: 16px 8px;
+    text-align: center;
+}
+
+.cd-value {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--nutricar-light);
+}
+
+.cd-unit {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+}
+
+/* COLUNA DIREITA - LISTA DE EVENTOS MAIS LARGA */
+.events-list-container {
+    width: 1000px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARTÃO DO EVENTO (ITEM DA LISTA) */
+.event-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.event-card.inauguracao { border-left: 8px solid var(--nutricar-accent); }
+.event-card.retrofit { border-left: 8px solid var(--accent-retrofit); }
+.event-card.outro { border-left: 8px solid var(--accent-outro); }
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(247, 247, 240, 0.05);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(247, 247, 240, 0.1);
+}
+
+.event-date .day {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--nutricar-light);
+}
+
+.event-date .month {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--nutricar-accent);
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.event-info h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--nutricar-light);
+    margin-bottom: 6px;
+}
+
+.event-info p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* CONTAINER DAS TAGS */
+.event-badges-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* TAGS COM TAMANHO TRAVADO E IDÊNTICO */
+.event-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 155px;
+    min-width: 155px;
+    max-width: 155px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.badge-inauguracao {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: var(--nutricar-accent);
+    border: 1px solid var(--nutricar-accent);
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+}
+
+.badge-retrofit {
+    background-color:#fdfae91f;
+    color: var(--accent-retrofit);
+    border: 1px solid var(--accent-retrofit);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.badge-outro {
+    background-color: #f073421c;
+    color: var(--accent-outro);
+    border: 1px solid var(--accent-outro);
+}
+
+.segmento-residencial {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid #3b82f6;
+}
+
+.segmento-corporativo {
+    background-color: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid #a855f7;
+}

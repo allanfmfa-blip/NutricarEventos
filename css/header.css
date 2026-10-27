@@ -1,0 +1,92 @@
+@import url(eventos.css);
+@import url(geral.css);
+@import url(painel.css);
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(15, 28, 22, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 18px 40px;
+    border-bottom: 3px solid var(--nutricar-accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-svg {
+    height: 110px;
+    width: auto;
+    display: block;
+}
+
+.header-divider {
+    width: 2px;
+    height: 32px;
+    background-color: var(--card-border);
+}
+
+.header-title h1 {
+    padding-left: 0.5em;
+    font-size: 4rem;
+    font-family: var(--font-titulo);
+    font-weight: 500;
+    color: var(--nutricar-light);
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    gap: 20px;
+}
+
+.badge-live {
+    font-family: var(--font-texto);
+    background-color: #ef4444;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(0.95);
+    }
+}
+
+.header-clock {
+    text-align: right;
+}
+
+.clock-time {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: var(--font-texto);
+    color: var(--nutricar-light);
+    letter-spacing: 1px;
+}
+
+.clock-date {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: capitalize;
+    font-family: var(--font-texto);
+}

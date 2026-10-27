@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/eventos.css">
+    <link rel="stylesheet" href="css/painel.css">
+    <link rel="stylesheet" href="css/geral.css">
+    <title>Nutricar - Cronograma de Eventos & Retrofits</title>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO NUTRICAR -->
+    <header>
+        <div class="header-brand">
+            <!-- Logo Oficial em SVG Inline -->
+            <img src="assets/imgs/logo_horizontal_vf branco outline.png" alt="#" class="logo-svg">
+            <div class="header-divider"></div>
+
+            <div class="header-title">
+                <h1>CRONOGRAMA<span class="badge-live">Ao Vivo</span></h1>
+            </div>
+        </div>
+
+        <div class="header-clock">
+            <div class="clock-time" id="clock-time">00:00:00</div>
+            <div class="clock-date" id="clock-date">Carregando data...</div>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL EM DUAS COLUNAS -->
+    <main class="dashboard-layout">
+        
+        <!-- COLUNA ESQUERDA: PRÓXIMO EVENTO & CONTADOR FIXO -->
+        <aside class="sidebar-next-event" id="next-event-sidebar">
+            <div class="next-card-content">
+                <span class="next-label">Próximo Evento</span>
+                <h2 id="next-title">Carregando...</h2>
+                <p id="next-desc">Aguarde os dados...</p>
+                
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <span id="cd-days" class="cd-value">00</span>
+                        <span class="cd-unit">Dias</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="cd-hours" class="cd-value">00</span>
+                        <span class="cd-unit">Horas</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="cd-minutes" class="cd-value">00</span>
+                        <span class="cd-unit">Min</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="cd-seconds" class="cd-value">00</span>
+                        <span class="cd-unit">Seg</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- COLUNA DIREITA: LISTA DE EVENTOS -->
+        <div class="events-list-container" id="events-container">
+            <!-- Renderizado dinamicamente via JS -->
+        </div>
+
+    </main>
+
+    <!-- PAINEL DE CONTROLE FLUTUANTE -->
+    <div class="control-panel hidden" id="control-panel">
+        <input type="text" id="csv-url-input" placeholder="Cole o link CSV do Google Sheets aqui...">
+        <button onclick="loadSheetsCSV()">Carregar CSV</button>
+        <button id="btn-scroll" class="btn-toggle-scroll" onclick="toggleScroll()">PAUSAR ROLAGEM</button>
+        <button class="btn-hide-panel" onclick="togglePanel(false)">Ocultar Barra</button>
+    </div>
+
+    <button class="btn-show-controls" onclick="togglePanel(true)" title="Mostrar Configurações">⚙️</button>
+
+    <script src="JS/scripts.js"></script>
+</body>
+
+</html>
